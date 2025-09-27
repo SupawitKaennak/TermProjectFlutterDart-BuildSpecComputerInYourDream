@@ -128,7 +128,7 @@ class PartsRepository {
       case PartCategory.memory:
         return [
           Part(
-            id: 'ram-16-ddr4-3200',
+            id: 'ram-corsair-16-ddr4-3200',
             name: 'Corsair Vengeance LPX 16GB (2x8) DDR4-3200',
             price: 1590,
             category: PartCategory.memory,
@@ -136,7 +136,7 @@ class PartsRepository {
             description: 'DDR4 • 3200MHz • CL16 • 1.35V',
           ),
           Part(
-            id: 'ram-32-ddr4-3600',
+            id: 'ram-gskill-32-ddr4-3600',
             name: 'G.SKILL Ripjaws V 32GB (2x16) DDR4-3600',
             price: 2690,
             category: PartCategory.memory,
@@ -144,7 +144,7 @@ class PartsRepository {
             description: 'DDR4 • 3600MHz • CL18',
           ),
           Part(
-            id: 'ram-32-ddr4-3600',
+            id: 'ram-kingston-32-ddr4-3600',
             name: 'KINGSTON FURY BEAST RGB RAM DDR4(3200) 32GB (16GBX2)',
             price: 2640,
             category: PartCategory.memory,
@@ -155,7 +155,7 @@ class PartsRepository {
       case PartCategory.m2:
         return [
           Part(
-            id: 'ssd-1tb',
+            id: 'ssd-samsung-1tb',
             name: 'Samsung 970 EVO Plus 1TB NVMe',
             price: 2990,
             category: PartCategory.m2,
@@ -163,7 +163,7 @@ class PartsRepository {
             description: 'NVMe PCIe 3.0 x4 • Up to 3500/3300 MB/s',
           ), 
           Part(
-            id: 'ssd-1tb',
+            id: 'ssd-wd-blue-1tb',
             name: '500 GB SSD WD BLUE SATA M.2 2280 (WDS500G2B0B) 3D NAND',
             price: 1590,
             category: PartCategory.m2,
@@ -182,7 +182,7 @@ class PartsRepository {
             description: 'SATA 3.0 6Gb/s',
           ),
           Part(
-            id: 'ssd-sata-1tb',
+            id: 'ssd-crucial-sata-1tb',
             name: 'Crucial MX500 1TB 2.5"',
             price: 2390,
             category: PartCategory.storage,
@@ -190,7 +190,7 @@ class PartsRepository {
             description: 'SATA 6Gb/s • Up to 560/510 MB/s',
           ),
            Part(
-            id: 'ssd-sata-1tb',
+            id: 'hdd-wd-blue-sata-1tb',
             name: '1 TB HDD WD BLUE (7200RPM, 64MB, SATA-3, WD10EZEX)"',
             price: 1595,
             category: PartCategory.storage,
