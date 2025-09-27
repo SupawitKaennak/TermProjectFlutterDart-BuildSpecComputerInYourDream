@@ -20,7 +20,14 @@ class MyApp extends StatelessWidget {
       create: (_) => BuildProvider(),
       child: MaterialApp(
         title: 'PC Builder',
-        theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple)),
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 54, 67, 140)),
+          appBarTheme: const AppBarTheme(
+            backgroundColor: Color.fromARGB(255, 54, 67, 140),
+            foregroundColor: Colors.white, // ทำให้ Title และ Icons เป็นสีขาว
+            elevation: 2,
+          ),
+        ),
         home: const CategoriesScreen(),
       ),
     );
