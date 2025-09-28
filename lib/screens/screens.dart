@@ -6,6 +6,7 @@ import '../models/models.dart';
 import '../models/category_images.dart';
 import 'wheel_screen.dart';
 import 'product_detail_screen.dart';
+import 'auto_build_screen.dart';
 // import retained in other files
 import '../data/parts_repository.dart';
 
@@ -38,27 +39,48 @@ class CategoriesScreen extends StatelessWidget {
       ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(12),
-        child: Row(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
-            Expanded(
-              child: OutlinedButton.icon(
-                onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (_) => const SavedBuildsScreen()),
+            Row(
+              children: [
+                Expanded(
+                  child: OutlinedButton.icon(
+                    onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => const SavedBuildsScreen()),
+                    ),
+                    icon: const Icon(Icons.list),
+                    label: const Text('สเปคที่บันทึกไว้'),
+                  ),
                 ),
-                icon: const Icon(Icons.list),
-                label: const Text('สเปคที่บันทึกไว้'),
-              ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: ElevatedButton.icon(
+                    onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => const WheelScreen()),
+                    ),
+                    icon: const Icon(Icons.pie_chart),
+                    label: const Text('สร้างชุดสเปค'),
+                  ),
+                ),
+              ],
             ),
-            const SizedBox(width: 12),
-            Expanded(
+            const SizedBox(height: 8),
+            SizedBox(
+              width: double.infinity,
               child: ElevatedButton.icon(
                 onPressed: () => Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (_) => const WheelScreen()),
+                  MaterialPageRoute(builder: (_) => const AutoBuildScreen()),
                 ),
-                icon: const Icon(Icons.pie_chart),
-                label: const Text('สร้างชุดสเปค'),
+                icon: const Icon(Icons.auto_awesome),
+                label: const Text('สร้างสเปคอัตโนมัติ'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blueAccent,
+                  foregroundColor: Colors.white,
+                ),
               ),
             ),
           ],

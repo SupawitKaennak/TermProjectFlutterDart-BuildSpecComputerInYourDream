@@ -28,6 +28,86 @@ enum PartCategory {
   mouse,
 }
 
+@HiveType(typeId: 4)
+enum SocketType {
+  @HiveField(0)
+  am4,
+  @HiveField(1)
+  lga1700,
+  @HiveField(2)
+  am5,
+  @HiveField(3)
+  lga1200,
+}
+
+class SocketTypeAdapter extends TypeAdapter<SocketType> {
+  @override
+  final int typeId = 4;
+
+  @override
+  SocketType read(BinaryReader reader) {
+    final index = reader.readByte();
+    return SocketType.values[index];
+  }
+
+  @override
+  void write(BinaryWriter writer, SocketType obj) {
+    writer.writeByte(obj.index);
+  }
+}
+
+@HiveType(typeId: 5)
+enum FormFactor {
+  @HiveField(0)
+  matx,
+  @HiveField(1)
+  atx,
+  @HiveField(2)
+  e_atx,
+  @HiveField(3)
+  mini_itx,
+}
+
+class FormFactorAdapter extends TypeAdapter<FormFactor> {
+  @override
+  final int typeId = 5;
+
+  @override
+  FormFactor read(BinaryReader reader) {
+    final index = reader.readByte();
+    return FormFactor.values[index];
+  }
+
+  @override
+  void write(BinaryWriter writer, FormFactor obj) {
+    writer.writeByte(obj.index);
+  }
+}
+
+@HiveType(typeId: 6)
+enum RamType {
+  @HiveField(0)
+  ddr4,
+  @HiveField(1)
+  ddr5,
+}
+
+class RamTypeAdapter extends TypeAdapter<RamType> {
+  @override
+  final int typeId = 6;
+
+  @override
+  RamType read(BinaryReader reader) {
+    final index = reader.readByte();
+    return RamType.values[index];
+  }
+
+  @override
+  void write(BinaryWriter writer, RamType obj) {
+    writer.writeByte(obj.index);
+  }
+}
+
 class PartCategoryAdapter extends TypeAdapter<PartCategory> {
   @override
   final int typeId = 1;
@@ -64,7 +144,34 @@ class Part extends HiveObject {
   @HiveField(5)
   String? description;
 
-  Part({required this.id, required this.name, required this.price, required this.category, this.imageUrl, this.description});
+  @HiveField(6)
+  SocketType? socket;
+
+  @HiveField(7)
+  String? chipset;
+
+  @HiveField(8)
+  FormFactor? formFactor;
+
+  @HiveField(9)
+  int? recommendedPsuWatts;
+
+  @HiveField(10)
+  RamType? ramType;
+
+  Part({
+    required this.id,
+    required this.name,
+    required this.price,
+    required this.category,
+    this.imageUrl,
+    this.description,
+    this.socket,
+    this.chipset,
+    this.formFactor,
+    this.recommendedPsuWatts,
+    this.ramType,
+  });
 }
 
 class PartAdapter extends TypeAdapter<Part> {
@@ -85,13 +192,18 @@ class PartAdapter extends TypeAdapter<Part> {
       category: fields[3] as PartCategory,
       imageUrl: fields[4] as String?,
       description: fields[5] as String?,
+      socket: fields[6] as SocketType?,
+      chipset: fields[7] as String?,
+      formFactor: fields[8] as FormFactor?,
+      recommendedPsuWatts: fields[9] as int?,
+      ramType: fields[10] as RamType?,
     );
   }
 
   @override
   void write(BinaryWriter writer, Part obj) {
     writer
-      ..writeByte(6)
+      ..writeByte(11)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -103,7 +215,17 @@ class PartAdapter extends TypeAdapter<Part> {
       ..writeByte(4)
       ..write(obj.imageUrl)
       ..writeByte(5)
-      ..write(obj.description);
+      ..write(obj.description)
+      ..writeByte(6)
+      ..write(obj.socket)
+      ..writeByte(7)
+      ..write(obj.chipset)
+      ..writeByte(8)
+      ..write(obj.formFactor)
+      ..writeByte(9)
+      ..write(obj.recommendedPsuWatts)
+      ..writeByte(10)
+      ..write(obj.ramType);
   }
 }
 

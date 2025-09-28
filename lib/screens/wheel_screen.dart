@@ -6,6 +6,7 @@ import '../models/models.dart';
 import '../services/db_service.dart';
 import '../models/category_images.dart';
 import 'screens.dart' show SavedBuildsScreen; // reuse existing screen
+import 'auto_build_screen.dart';
 
 class WheelScreen extends StatelessWidget {
   const WheelScreen({super.key});
@@ -65,6 +66,18 @@ class WheelScreen extends StatelessWidget {
             },
             label: const Text('บันทึก'),
             icon: const Icon(Icons.save),
+          ),
+          const SizedBox(height: 12),
+          FloatingActionButton.extended(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const AutoBuildScreen()),
+              );
+            },
+            backgroundColor: Colors.blueAccent,
+            label: const Text('Auto Build'),
+            icon: const Icon(Icons.auto_awesome),
           ),
           const SizedBox(height: 12),
           FloatingActionButton.extended(

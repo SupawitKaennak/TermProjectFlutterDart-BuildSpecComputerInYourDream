@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import '../models/models.dart';
+import '../services/auto_build_service.dart';
 
 class BuildProvider extends ChangeNotifier {
   final Map<PartCategory, Part?> _selected = {
@@ -68,6 +69,16 @@ class BuildProvider extends ChangeNotifier {
 
   void clearLoadedId() {
     _loadedBuildId = null;
+  }
+
+  final AutoBuildService _autoService = AutoBuildService();
+
+  Future<PcBuild?> generateAutoBuild(double budget) async {
+    return _autoService.generateBuild(budget);
+  }
+
+  void loadAutoBuild(PcBuild build) {
+    loadFromBuild(build);
   }
 }
 

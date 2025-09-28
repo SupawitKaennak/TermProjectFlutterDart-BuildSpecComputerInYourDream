@@ -13,6 +13,8 @@ class PartsRepository {
             category: PartCategory.cpu,
             imageUrl: 'https://www.jib.co.th/img_master/product/original/20180731172019_26634_24_1.png',
             description: '4C/4T • Base 3.1 GHz Turbo 3.4 GHz • AM4 • 65W',
+            socket: SocketType.am4,
+            recommendedPsuWatts: 65,
           ),
           Part(
             id: 'cpu-ryzen5-5600',
@@ -21,6 +23,8 @@ class PartsRepository {
             category: PartCategory.cpu,
             imageUrl: 'https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/product736_800.jpg',
             description: '6C/12T • Base 3.5GHz Boost 4.4GHz • AM4 • 65W',
+            socket: SocketType.am4,
+            recommendedPsuWatts: 65,
           ),
           Part(
             id: 'cpu-ryzen7-5700g',
@@ -29,6 +33,8 @@ class PartsRepository {
             category: PartCategory.cpu,
             imageUrl: 'https://media-cdn.bnn.in.th/129511/amd-cpu-ryzen-7-5700g-gen5-1.jpg',
             description: '8C/16T • Base 3.8GHz Boost 4.6GHz • AM4 • 65W',
+            socket: SocketType.am4,
+            recommendedPsuWatts: 65,
           ),
           Part(
             id: 'cpu-ryzen9-5950x',
@@ -37,6 +43,8 @@ class PartsRepository {
             category: PartCategory.cpu,
             imageUrl: 'https://m.media-amazon.com/images/I/61ISSSA+x+L._AC_SL1280_.jpg',
             description: '16C/32T • Base 3.4GHz Boost 4.9GHz • AM4 • 105W',
+            socket: SocketType.am4,
+            recommendedPsuWatts: 105,
           ),
           Part(
             id: 'cpu-i3-12100',
@@ -45,6 +53,8 @@ class PartsRepository {
             category: PartCategory.cpu,
             imageUrl: 'https://www.jib.co.th/img_master/product/original/2022021010031651545_1.jpg',
             description: '4C/8T • Base 3.3GHz Turbo 4.3GHz • LGA1700 • 60W',
+            socket: SocketType.lga1700,
+            recommendedPsuWatts: 60,
           ),
           Part(
             id: 'cpu-i5-12400F',
@@ -53,6 +63,8 @@ class PartsRepository {
             category: PartCategory.cpu,
             imageUrl: 'https://www.jib.co.th/img_master/product/original/2022010509243450623_1.jpg',
             description: '6C/12T • Base 2.5GHz Turbo 4.4GHz • LGA1700 • 65W',
+            socket: SocketType.lga1700,
+            recommendedPsuWatts: 65,
           ),
           Part(
             id: 'cpu-i7-14700f',
@@ -61,7 +73,9 @@ class PartsRepository {
             category: PartCategory.cpu,
             imageUrl: 'https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products123934_800.jpg',
             description: '20C/28T • Base 2.4GHz Turbo 5.4GHz • LGA1700 • 65W • Max power 219W',
-          ),           
+            socket: SocketType.lga1700,
+            recommendedPsuWatts: 219,
+          ),
           Part(
             id: 'cpu-i9-14900k',
             name: 'INTEL CORE I9-14900K',
@@ -69,6 +83,8 @@ class PartsRepository {
             category: PartCategory.cpu,
             imageUrl: 'https://www.jib.co.th/img_master/product/original/2023101615262063040_1.png',
             description: '24C/32T • Base 3.2GHz Turbo 6GHz • LGA1700 • 125W',
+            socket: SocketType.lga1700,
+            recommendedPsuWatts: 125,
           ),
         ];
       case PartCategory.mainboard:
@@ -80,6 +96,10 @@ class PartsRepository {
             category: PartCategory.mainboard,
             imageUrl: 'https://www.jib.co.th/img_master/product/original/2021011616214344826_1.jpg',
             description: 'AM4 • mATX • PCIe 4.0 • 2x M.2 • 4x DIMM',
+            socket: SocketType.am4,
+            chipset: 'B550',
+            formFactor: FormFactor.matx,
+            ramType: RamType.ddr4,
           ),
           Part(
             id: 'mb-h610m k',
@@ -88,6 +108,10 @@ class PartsRepository {
             category: PartCategory.mainboard,
             imageUrl: 'https://ihcupload.s3.ap-southeast-1.amazonaws.com/img/product/products40588_800.jpg',
             description: 'LGA1700 • mATX • PCIe 4.0 • 2x M.2 • DDR4',
+            socket: SocketType.lga1700,
+            chipset: 'B660',
+            formFactor: FormFactor.matx,
+            ramType: RamType.ddr4,
           ),
           Part(
             id: 'mb-b660m',
@@ -96,6 +120,10 @@ class PartsRepository {
             category: PartCategory.mainboard,
             imageUrl: 'https://asset.msi.com/resize/image/global/product/product_16450616495843a011b65cafb5c31b1d8f280ccff0.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png',
             description: 'LGA1700 • mATX • PCIe 4.0 • 1x M.2 • DDR4',
+            socket: SocketType.lga1700,
+            chipset: 'H610',
+            formFactor: FormFactor.matx,
+            ramType: RamType.ddr4,
           ),
           Part(
             id: 'mb-b450m-steel-legend',
@@ -104,6 +132,10 @@ class PartsRepository {
             category: PartCategory.mainboard,
             imageUrl: 'https://www.jib.co.th/img_master/product/original/2019030214235233132_1.png',
             description: 'AM4 • mATX • PCIe 4.0 • 2x M.2 • DDR4',
+            socket: SocketType.am4,
+            chipset: 'B450',
+            formFactor: FormFactor.matx,
+            ramType: RamType.ddr4,
           ),
           Part(
             id: 'mb-gigabyte-b550m-ds3h',
@@ -112,6 +144,10 @@ class PartsRepository {
             category: PartCategory.mainboard,
             imageUrl: 'https://img.advice.co.th/images_nas/pic_product4/A0153455/A0153455OK_BIG_1.jpg',
             description: 'AM4 • mATX • PCIe 4.0 • 2x M.2, 1 x nvmg, 1 x sata • DDR4 x 4 slots',
+            socket: SocketType.am4,
+            chipset: 'B550',
+            formFactor: FormFactor.matx,
+            ramType: RamType.ddr4,
           ),
           Part(
             id: 'mb-msi-z690-a-ddr4',
@@ -120,6 +156,10 @@ class PartsRepository {
             category: PartCategory.mainboard,
             imageUrl: 'https://www.jib.co.th/img_master/product/original/2021110315094049602_1.jpg',
             description: 'LGA1700 • ATX • PCIe 4.0 • 2x M.2, 1 x nvmg, 1 x sata • DDR4 x 4 slots',
+            socket: SocketType.lga1700,
+            chipset: 'Z690',
+            formFactor: FormFactor.atx,
+            ramType: RamType.ddr4,
           ),
         ];
       case PartCategory.gpu:
@@ -131,6 +171,7 @@ class PartsRepository {
             category: PartCategory.gpu,
             imageUrl: 'https://www.jib.co.th/img_master/product/original/2023062813215960498_1.jpg',
             description: 'Ada Lovelace • 8GB GDDR6 • HDMI/DP • pcie 4.0', 
+            recommendedPsuWatts: 550,
           ),
           Part(
             id: 'gpu-gtx-1650',
@@ -139,6 +180,7 @@ class PartsRepository {
             category: PartCategory.gpu,
             imageUrl: 'https://www.jib.co.th/img_master/product/original/2020081810102142200_1.jpg',
             description: 'TURING • 4GB GDDR5 • HDMI/DP • pcie 3.0',
+            recommendedPsuWatts: 300,
           ),
           Part(
             id: 'gpu-rx-6600',
@@ -147,6 +189,7 @@ class PartsRepository {
             category: PartCategory.gpu,
             imageUrl: 'https://www.jib.co.th/img_master/product/original/2021111013092349709_1.jpg',
             description: 'RDNA2 • 8GB GDDR6 • HDMI/DP • pcie 4.0',
+            recommendedPsuWatts: 500,
           ),
           Part(
             id: 'gpu-sapphire-pulse-rx-7600xt',
@@ -155,6 +198,7 @@ class PartsRepository {
             category: PartCategory.gpu,
             imageUrl: 'https://www.jib.co.th/img_master/product/original/2024031214163066032_1.jpg',
             description: 'RDNA3 • 16GB GDDR6 • HDMI/DP • pcie 4.0',
+            recommendedPsuWatts: 650,
           ),
           Part(
             id: 'gpu-asus-rog-astral-rtx-5090',
@@ -163,6 +207,7 @@ class PartsRepository {
             category: PartCategory.gpu,
             imageUrl: 'https://www.jib.co.th/img_master/product/original/2025013014142074055_1.jpg',
             description: 'Blackwell • 32GB GDDR7 • HDMI/DP • pcie 5.0',
+            recommendedPsuWatts: 1000,
           ),
           Part(
             id: 'gpu-msi-geforce-gt-1030-2gd4-lp-oc',
@@ -171,6 +216,7 @@ class PartsRepository {
             category: PartCategory.gpu,
             imageUrl: 'https://www.jib.co.th/img_master/product/original/2021063015175947445_1.jpg',
             description: 'NVIDIA Pascal • 2GB GDDR4 • HDMI/DP • pcie 3.0',
+            recommendedPsuWatts: 300,
           ),
         ];
       case PartCategory.memory:
@@ -182,6 +228,7 @@ class PartsRepository {
             category: PartCategory.memory,
             imageUrl: 'https://www.jib.co.th/img_master/product/original/2021033008460146060_1.jpg',
             description: 'DDR4 • 3200MHz • CL16 • 1.35V',
+            ramType: RamType.ddr4,
           ),
           Part(
             id: 'ram-gskill-32-ddr4-3600',
@@ -190,6 +237,7 @@ class PartsRepository {
             category: PartCategory.memory,
             imageUrl: 'https://www.gskill.com/_upload/images/156283178410.png',
             description: 'DDR4 • 3600MHz • CL18',
+            ramType: RamType.ddr4,
           ),
           Part(
             id: 'ram-kingston-32-ddr4-3600',
@@ -198,6 +246,7 @@ class PartsRepository {
             category: PartCategory.memory,
             imageUrl: 'https://img.advice.co.th/images_nas/pic_product4/A0155760/A0155760OK_BIG_1.jpg',
             description: 'DDR4 • 3200MHz • CL16',
+            ramType: RamType.ddr4,
           ),
         ];
       case PartCategory.m2:
@@ -282,6 +331,7 @@ class PartsRepository {
             category: PartCategory.psu,
             imageUrl: 'https://microless.com/cdn/products/bea3f9ddbf8ee10f1809ab7b3ae9e05d-hi.jpg',
             description: '650W • 80+ Bronze • Non-modular',
+            recommendedPsuWatts: 650,
           ),
           Part(
             id: 'psu-750w-gold',
@@ -290,6 +340,7 @@ class PartsRepository {
             category: PartCategory.psu,
             imageUrl: 'https://m.media-amazon.com/images/I/41zLhprxqXL.jpg',
             description: '750W • Fully Modular • 80+ Gold',
+            recommendedPsuWatts: 750,
           ),
           Part(
             id: 'psu-1200w-gold',
@@ -298,6 +349,7 @@ class PartsRepository {
             category: PartCategory.psu,
             imageUrl: 'https://www.jib.co.th/img_master/uploads/0_Content/2023/202308/2314534130/100-03.jpg',
             description: '1200W • Fully Modular • 80+ Gold',
+            recommendedPsuWatts: 1200,
           ),
         ];
       case PartCategory.cpuCooler:
@@ -409,6 +461,25 @@ class PartsRepository {
           ),
         ];
     }
+  }
+
+  List<Part> getCompatibleParts(PartCategory category, Map<String, dynamic> constraints) {
+    final allParts = partsFor(category);
+    return allParts.where((part) {
+      if (constraints.containsKey('socket') && part.socket != constraints['socket']) {
+        return false;
+      }
+      if (constraints.containsKey('ramType') && part.ramType != constraints['ramType']) {
+        return false;
+      }
+      if (constraints.containsKey('formFactor') && part.formFactor != constraints['formFactor']) {
+        return false;
+      }
+      if (constraints.containsKey('minPsuWatts') && (part.recommendedPsuWatts ?? 0) < constraints['minPsuWatts']) {
+        return false;
+      }
+      return true;
+    }).toList();
   }
 }
 
