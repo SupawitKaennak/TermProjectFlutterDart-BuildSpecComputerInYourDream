@@ -15,6 +15,15 @@ class LocalDbService {
     if (!Hive.isAdapterRegistered(3)) {
       Hive.registerAdapter(PcBuildAdapter());
     }
+    if (!Hive.isAdapterRegistered(4)) {
+      Hive.registerAdapter(SocketTypeAdapter());
+    }
+    if (!Hive.isAdapterRegistered(5)) {
+      Hive.registerAdapter(FormFactorAdapter());
+    }
+    if (!Hive.isAdapterRegistered(6)) {
+      Hive.registerAdapter(RamTypeAdapter());
+    }
     await Hive.openBox<PcBuild>(buildsBoxName);
   }
 
