@@ -131,7 +131,7 @@ class PartsScreen extends StatelessWidget {
     final selected = provider.selectedParts[category];
     final searchController = TextEditingController();
     double minPrice = 0;
-    double maxPrice = 100000;
+    double maxPrice = 150000;
 
     List<Part> filter(List<Part> source) {
       final q = searchController.text.toLowerCase();
@@ -169,8 +169,8 @@ class PartsScreen extends StatelessWidget {
                       child: RangeSlider(
                         values: RangeValues(minPrice, maxPrice),
                         min: 0,
-                        max: 100000,
-                        divisions: 100,
+                        max: 150000,
+                        divisions: 150,
                         labels: RangeLabels(minPrice.toStringAsFixed(0), maxPrice.toStringAsFixed(0)),
                         onChanged: (v) {
                           setState(() {

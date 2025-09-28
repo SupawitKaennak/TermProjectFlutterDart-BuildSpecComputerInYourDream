@@ -201,15 +201,6 @@ class PartsRepository {
             recommendedPsuWatts: 650,
           ),
           Part(
-            id: 'gpu-asus-rog-astral-rtx-5090',
-            name: 'ASUS ROG ASTRAL GEFORCE RTX 5090 32GB GDDR7 OC EDITION',
-            price: 114900,
-            category: PartCategory.gpu,
-            imageUrl: 'https://www.jib.co.th/img_master/product/original/2025013014142074055_1.jpg',
-            description: 'Blackwell • 32GB GDDR7 • HDMI/DP • pcie 5.0',
-            recommendedPsuWatts: 1000,
-          ),
-          Part(
             id: 'gpu-msi-geforce-gt-1030-2gd4-lp-oc',
             name: 'MSI GEFORCE GT 1030 2GD4 LP OC - 2GB DDR4',
             price: 2460,
@@ -217,6 +208,24 @@ class PartsRepository {
             imageUrl: 'https://www.jib.co.th/img_master/product/original/2021063015175947445_1.jpg',
             description: 'NVIDIA Pascal • 2GB GDDR4 • HDMI/DP • pcie 3.0',
             recommendedPsuWatts: 300,
+          ),
+          Part(
+            id: 'gpu-asus-rog-strix-rtx-4090-oc',
+            name: 'ASUS ROG STRIX GEFORCE RTX 4090 OC EDITION 24GB GDDR6X',
+            price: 79900,
+            category: PartCategory.gpu,
+            imageUrl: 'https://www.jib.co.th/img_master/product/original/2023102617095563258_1.jpg',
+            description: 'Ada Lovelace • 24GB GDDR6X • HDMI/DP • pcie 4.0',
+            recommendedPsuWatts: 1000,
+          ),
+          Part(
+            id: 'gpu-asus-rog-astral-rtx-5090',
+            name: 'ASUS ROG ASTRAL GEFORCE RTX 5090 32GB GDDR7 OC EDITION',
+            price: 114900,
+            category: PartCategory.gpu,
+            imageUrl: 'https://www.jib.co.th/img_master/product/original/2025013014142074055_1.jpg',
+            description: 'Blackwell • 32GB GDDR7 • HDMI/DP • pcie 5.0',
+            recommendedPsuWatts: 1000,
           ),
         ];
       case PartCategory.memory:
@@ -482,5 +491,3 @@ class PartsRepository {
     }).toList();
   }
 }
-
-

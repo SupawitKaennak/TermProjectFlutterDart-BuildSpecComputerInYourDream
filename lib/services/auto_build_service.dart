@@ -9,10 +9,10 @@ class AutoBuildService {
       return null; // Minimum budget for basic build
     }
 
-    // Budget allocation (percentages)
-    final cpuBudget = budget * 0.25;
-    final mbBudget = budget * 0.20;
-    final gpuBudget = budget * 0.30;
+    // Budget allocation (percentages) - adjusted for high-end GPU support
+    final cpuBudget = budget * 0.20;
+    final mbBudget = budget * 0.15;
+    final gpuBudget = budget * 0.40;
     final ramBudget = budget * 0.08;
     final storageBudget = budget * 0.05;
     final psuBudget = budget * 0.05;
@@ -43,10 +43,10 @@ class AutoBuildService {
     final selectedStorage = _selectPartInBudget(storages, storageBudget) ?? _selectPartInBudget(_repository.partsFor(PartCategory.storage), storageBudget);
     if (selectedStorage == null) return null;
 
-    // Step 6: Calculate required PSU watts (rough estimate: CPU + GPU TDP + 100W overhead)
+    // Step 6: Calculate required PSU watts (rough estimate: CPU + GPU TDP + 50W overhead for tolerance)
     final cpuWatts = selectedCpu.recommendedPsuWatts ?? 100;
     final gpuWatts = selectedGpu?.recommendedPsuWatts ?? 0;
-    final minPsuWatts = cpuWatts + gpuWatts + 100;
+    final minPsuWatts = cpuWatts + gpuWatts + 50;
     final psus = _repository.getCompatibleParts(PartCategory.psu, {'minPsuWatts': minPsuWatts});
     final selectedPsu = _selectPartInBudget(psus, psuBudget);
     if (selectedPsu == null) return null;
@@ -79,14 +79,17 @@ class AutoBuildService {
 
   Part? _selectPartInBudget(List<Part> parts, double budget) {
     if (parts.isEmpty) return null;
-    // Sort by price ascending, pick the most expensive within budget
-    final affordable = parts.where((p) => p.price <= budget).toList();
-    if (affordable.isEmpty) {
-      // If no parts fit budget, return the cheapest available
-      parts.sort((a, b) => a.price.compareTo(b.price));
-      return parts.first;
+    // Sort all parts by price descending, then pick the first (highest) that fits budget
+    final sortedParts = List<Part>.from(parts);
+    sortedParts.sort((a, b) => b.price.compareTo(a.price)); // Highest price first
+    for (final part in sortedParts) {
+      if (part.price <= budget) {
+        return part;
+      }
     }
-    affordable.sort((a, b) => b.price.compareTo(a.price)); // Highest first
-    return affordable.first;
+    // If no parts fit budget, return the cheapest available
+    final sortedCheap = List<Part>.from(parts);
+    sortedCheap.sort((a, b) => a.price.compareTo(b.price));
+    return sortedCheap.first;
   }
 }
