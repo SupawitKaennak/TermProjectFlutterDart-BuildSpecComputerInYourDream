@@ -78,7 +78,7 @@ class PartsRepository {
             name: 'ASUS TUF Gaming B550M-PLUS',
             price: 3990,
             category: PartCategory.mainboard,
-            imageUrl: 'https://www.asus.com/media/global/gallery/q3j5idarpfbmk3a4_setting_xxx_0_90_end_800.png',
+            imageUrl: 'https://www.jib.co.th/img_master/product/original/2021011616214344826_1.jpg',
             description: 'AM4 • mATX • PCIe 4.0 • 2x M.2 • 4x DIMM',
           ),
           Part(
@@ -97,6 +97,30 @@ class PartsRepository {
             imageUrl: 'https://asset.msi.com/resize/image/global/product/product_16450616495843a011b65cafb5c31b1d8f280ccff0.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png',
             description: 'LGA1700 • mATX • PCIe 4.0 • 1x M.2 • DDR4',
           ),
+          Part(
+            id: 'mb-b450m-steel-legend',
+            name: 'ASROCK B450M STEEL LEGEND (AMD SOCKET AM4 DDR4 MICRO-ATX)',
+            price: 2790,
+            category: PartCategory.mainboard,
+            imageUrl: 'https://www.jib.co.th/img_master/product/original/2019030214235233132_1.png',
+            description: 'AM4 • mATX • PCIe 4.0 • 2x M.2 • DDR4',
+          ),
+          Part(
+            id: 'mb-gigabyte-b550m-ds3h',
+            name: 'GIGABYTE B550M DS3H (REV. 1.7) (DDR4) (SOCKET AM4) (MICRO-ATX)',
+            price: 2990,
+            category: PartCategory.mainboard,
+            imageUrl: 'https://img.advice.co.th/images_nas/pic_product4/A0153455/A0153455OK_BIG_1.jpg',
+            description: 'AM4 • mATX • PCIe 4.0 • 2x M.2, 1 x nvmg, 1 x sata • DDR4 x 4 slots',
+          ),
+          Part(
+            id: 'mb-msi-z690-a-ddr4',
+            name: 'MSI PRO Z690-A DDR4',
+            price: 7490,
+            category: PartCategory.mainboard,
+            imageUrl: 'https://www.jib.co.th/img_master/product/original/2021110315094049602_1.jpg',
+            description: 'LGA1700 • ATX • PCIe 4.0 • 2x M.2, 1 x nvmg, 1 x sata • DDR4 x 4 slots',
+          ),
         ];
       case PartCategory.gpu:
         return [
@@ -106,7 +130,7 @@ class PartsRepository {
             price: 11990,
             category: PartCategory.gpu,
             imageUrl: 'https://www.jib.co.th/img_master/product/original/2023062813215960498_1.jpg',
-            description: 'Ada Lovelace • 8GB GDDR6 • HDMI/DP',
+            description: 'Ada Lovelace • 8GB GDDR6 • HDMI/DP • pcie 4.0', 
           ),
           Part(
             id: 'gpu-gtx-1650',
@@ -114,7 +138,7 @@ class PartsRepository {
             price: 5790,
             category: PartCategory.gpu,
             imageUrl: 'https://www.jib.co.th/img_master/product/original/2020081810102142200_1.jpg',
-            description: 'TURING • 4GB GDDR6 • HDMI/DP',
+            description: 'TURING • 4GB GDDR5 • HDMI/DP • pcie 3.0',
           ),
           Part(
             id: 'gpu-rx-6600',
@@ -122,7 +146,31 @@ class PartsRepository {
             price: 7990,
             category: PartCategory.gpu,
             imageUrl: 'https://www.jib.co.th/img_master/product/original/2021111013092349709_1.jpg',
-            description: 'RDNA2 • 8GB GDDR6 • HDMI/DP',
+            description: 'RDNA2 • 8GB GDDR6 • HDMI/DP • pcie 4.0',
+          ),
+          Part(
+            id: 'gpu-sapphire-pulse-rx-7600xt',
+            name: 'SAPPHIRE PULSE AMD RADEON RX 7600 XT 16GB - 16GB GDDR6',
+            price: 12500,
+            category: PartCategory.gpu,
+            imageUrl: 'https://www.jib.co.th/img_master/product/original/2024031214163066032_1.jpg',
+            description: 'RDNA3 • 16GB GDDR6 • HDMI/DP • pcie 4.0',
+          ),
+          Part(
+            id: 'gpu-asus-rog-astral-rtx-5090',
+            name: 'ASUS ROG ASTRAL GEFORCE RTX 5090 32GB GDDR7 OC EDITION',
+            price: 114900,
+            category: PartCategory.gpu,
+            imageUrl: 'https://www.jib.co.th/img_master/product/original/2025013014142074055_1.jpg',
+            description: 'Blackwell • 32GB GDDR7 • HDMI/DP • pcie 5.0',
+          ),
+          Part(
+            id: 'gpu-msi-geforce-gt-1030-2gd4-lp-oc',
+            name: 'MSI GEFORCE GT 1030 2GD4 LP OC - 2GB DDR4',
+            price: 2460,
+            category: PartCategory.gpu,
+            imageUrl: 'https://www.jib.co.th/img_master/product/original/2021063015175947445_1.jpg',
+            description: 'NVIDIA Pascal • 2GB GDDR4 • HDMI/DP • pcie 3.0',
           ),
         ];
       case PartCategory.memory:
